@@ -6,7 +6,7 @@
 
 ## ✨ About
 
-GitHub Action to use as a wrapper for the [Chocolatey](https://chocolatey.org/) CLI to build and publish packages.
+GitHub Action as a wrapper for the [Chocolatey](https://chocolatey.org/) CLI to build and publish packages. This will allow you to use Chocolatey on all [supported virtual environments](https://help.github.com/en/articles/virtual-environments-for-github-actions#supported-virtual-environments-and-hardware-resources) available.
 
 > **:warning: Note:** To use this action, you must have access to the [GitHub Actions](https://github.com/features/actions) feature. GitHub Actions are currently only available in public beta. You can [apply for the GitHub Actions beta here](https://github.com/features/actions/signup/).
 
@@ -29,7 +29,7 @@ jobs:
           args: -h
 ```
 
-Docker :whale: image is also provided and automatically updated within [Docker Hub](https://hub.docker.com/r/crazymax/ghaction-chocolatey/tags) so you can directly use the following [Docker Hub action](https://help.github.com/en/articles/workflow-syntax-for-github-actions#example-using-a-docker-hub-action).
+Docker :whale: image is also provided and automatically updated within [Docker Hub](https://hub.docker.com/r/crazymax/ghaction-chocolatey/tags) so you can directly use the [Docker Hub action](https://help.github.com/en/articles/workflow-syntax-for-github-actions#example-using-a-docker-hub-action) below.
 This is the **recommended way to run this action in order to speed up the process**. :rocket:
 
 ```yaml
