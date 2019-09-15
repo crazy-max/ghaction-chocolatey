@@ -1,0 +1,19 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  choco:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@master
+      -
+        name: Choco help
+        uses: crazy-max/ghaction-chocolatey@master
+        with:
+          args: -h
