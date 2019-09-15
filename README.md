@@ -1,5 +1,5 @@
 [![GitHub release](https://img.shields.io/github/release/crazy-max/ghaction-chocolatey.svg?style=flat-square)](https://github.com/crazy-max/ghaction-chocolatey/releases/latest)
-[![GitHub marketplace](https://img.shields.io/badge/marketplace-chocolatey-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/chocolatey)
+[![GitHub marketplace](https://img.shields.io/badge/marketplace-chocolatey--cli-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/chocolatey-cli)
 [![Test workflow](https://github.com/crazy-max/ghaction-chocolatey/workflows/test/badge.svg)](https://github.com/crazy-max/ghaction-chocolatey/actions)
 [![Support me on Patreon](https://img.shields.io/badge/donate-patreon-f96854.svg?logo=patreon&style=flat-square)](https://www.patreon.com/crazymax) 
 [![Paypal Donate](https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square)](https://www.paypal.me/crazyws)
