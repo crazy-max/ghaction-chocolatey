@@ -6,7 +6,7 @@
 
 ## ✨ About
 
-GitHub Action as a wrapper for the [Chocolatey](https://chocolatey.org/) CLI to build and publish packages. This will allow you to use Chocolatey on all [supported virtual environments](https://help.github.com/en/articles/virtual-environments-for-github-actions#supported-virtual-environments-and-hardware-resources) available.
+GitHub Action as a wrapper for the [Chocolatey](https://chocolatey.org/) CLI to build and publish packages.
 
 > **:warning: Note:** To use this action, you must have access to the [GitHub Actions](https://github.com/features/actions) feature. GitHub Actions are currently only available in public beta. You can [apply for the GitHub Actions beta here](https://github.com/features/actions/signup/).
 
@@ -38,6 +38,10 @@ Following inputs can be used as `step.with` keys
 | Name            | Type    | Description                           |
 |-----------------|---------|---------------------------------------|
 | `args`          | String  | Arguments to pass to Chocolatey CLI   |
+
+## :warning: Limitation
+
+This action is only available for Linux and Windows [virtual environments](https://help.github.com/en/articles/virtual-environments-for-github-actions#supported-virtual-environments-and-hardware-resources).
 
 ## 🤝 How can I help ?
 
