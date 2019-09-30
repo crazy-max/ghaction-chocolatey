@@ -6,7 +6,7 @@ import * as exec from '@actions/exec';
 
 async function run() {
   try {
-    if (os.platform() !== 'darwin') {
+    if (os.platform() == 'darwin') {
       core.setFailed('Not supported on darwin platform');
       return;
     }
