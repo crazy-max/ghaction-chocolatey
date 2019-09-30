@@ -1,0 +1,33 @@
+{
+  "name": "chocolatey-cli",
+  "description": "Wrapper for the Chocolatey CLI to build and publish packages",
+  "main": "lib/main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazy-max/ghaction-chocolatey.git"
+  },
+  "keywords": [
+    "actions",
+    "chocolatey"
+  ],
+  "author": "CrazyMax",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.4",
+    "prettier": "^1.17.1",
+    "typescript": "^3.5.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "prune": "npm prune --production"
+  }
+}

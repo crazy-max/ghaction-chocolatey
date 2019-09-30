@@ -1,6 +1,6 @@
 # https://help.github.com/en/articles/metadata-syntax-for-github-actions
 name: 'Chocolatey CLI'
-description: 'Wrapper for the Chocolatey CLI to build and publish packages.'
+description: 'Wrapper for the Chocolatey CLI to build and publish packages'
 author: 'crazy-max'
 branding:
   color: 'blue'
@@ -12,7 +12,5 @@ inputs:
     required: true
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.args }}
+  using: 'node12'
+  main: 'lib/main.js'
