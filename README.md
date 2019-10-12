@@ -1,12 +1,12 @@
 [![GitHub release](https://img.shields.io/github/release/crazy-max/ghaction-chocolatey.svg?style=flat-square)](https://github.com/crazy-max/ghaction-chocolatey/releases/latest)
-[![GitHub marketplace](https://img.shields.io/badge/marketplace-chocolatey--cli-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/chocolatey-cli)
+[![GitHub marketplace](https://img.shields.io/badge/marketplace-chocolatey--action-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/chocolatey-action)
 [![Test workflow](https://github.com/crazy-max/ghaction-chocolatey/workflows/test/badge.svg)](https://github.com/crazy-max/ghaction-chocolatey/actions)
 [![Support me on Patreon](https://img.shields.io/badge/donate-patreon-f96854.svg?logo=patreon&style=flat-square)](https://www.patreon.com/crazymax) 
 [![Paypal Donate](https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square)](https://www.paypal.me/crazyws)
 
 ## ✨ About
 
-GitHub Action as a wrapper for the [Chocolatey](https://chocolatey.org/) CLI to build and publish packages.
+GitHub Action for [Chocolatey](https://chocolatey.org/), the package manager for Windows.
 
 > **:warning: Note:** To use this action, you must have access to the [GitHub Actions](https://github.com/features/actions) feature. GitHub Actions are currently only available in public beta. You can [apply for the GitHub Actions beta here](https://github.com/features/actions/signup/).
 
@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@master
       -
         name: Choco help
-        uses: crazy-max/ghaction-chocolatey@master
+        uses: crazy-max/ghaction-chocolatey@v1
         with:
           args: -h
 ```
@@ -35,9 +35,9 @@ jobs:
 
 Following inputs can be used as `step.with` keys
 
-| Name            | Type    | Description                           |
-|-----------------|---------|---------------------------------------|
-| `args`          | String  | Arguments to pass to Chocolatey CLI   |
+| Name            | Type    | Description                     |
+|-----------------|---------|---------------------------------|
+| `args`          | String  | Arguments to pass to Chocolatey |
 
 ## :warning: Limitation
 

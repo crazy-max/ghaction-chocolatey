@@ -1,6 +1,6 @@
 # https://help.github.com/en/articles/metadata-syntax-for-github-actions
-name: 'Chocolatey CLI'
-description: 'Wrapper for the Chocolatey CLI to build and publish packages'
+name: 'Chocolatey Action'
+description: 'GitHub Action for Chocolatey, the package manager for Windows'
 author: 'crazy-max'
 branding:
   color: 'blue'
@@ -8,7 +8,7 @@ branding:
 
 inputs:
   args:
-    description: 'Arguments to pass to Chocolatey CLI'
+    description: 'Arguments to pass to Chocolatey'
     required: true
 
 runs:

@@ -1,6 +1,6 @@
 {
-  "name": "chocolatey-cli",
-  "description": "Wrapper for the Chocolatey CLI to build and publish packages",
+  "name": "chocolatey-action",
+  "description": "GitHub Action for Chocolatey, the package manager for Windows",
   "main": "lib/main.js",
   "directories": {
     "lib": "lib"
