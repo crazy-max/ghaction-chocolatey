@@ -2,23 +2,24 @@ name: docker
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: master
   push:
-    branches:
-      - master
-    tags:
-      - v*
+    branches: master
+    tags: v*
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Set TAG_NAME
-        if: startsWith(github.ref, 'refs/tags/')
+        name: Prepare
+        id: prepare
         run: |
-          echo "##[set-env name=TAG_NAME;]${GITHUB_REF#refs/tags/}"
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            echo ::set-output name=version::${GITHUB_REF#refs/tags/}
+          else
+            echo ::set-output name=version::snapshot
+          fi
       -
         name: Checkout
         uses: actions/checkout@v1
@@ -26,8 +27,8 @@ jobs:
         name: Docker Build
         run: |
           docker build \
-            --build-arg "VERSION=${TAG_NAME}" \
-            --tag "crazymax/ghaction-chocolatey:${TAG_NAME:-snapshot}" \
+            --build-arg "VERSION=${{ steps.prepare.outputs.version }}" \
+            --tag "crazymax/ghaction-chocolatey:${{ steps.prepare.outputs.version }}" \
             --tag "crazymax/ghaction-chocolatey:latest" \
             --file Dockerfile .
       -
@@ -42,3 +43,8 @@ jobs:
         if: success() && startsWith(github.ref, 'refs/tags/v')
         run: |
           docker push crazymax/ghaction-chocolatey
+      -
+        name: Clear
+        if: always() && startsWith(github.ref, 'refs/tags/v')
+        run: |
+          rm -f ${HOME}/.docker/config.json

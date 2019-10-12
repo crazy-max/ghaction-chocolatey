@@ -1,9 +1,14 @@
 name: test
 
 on:
+  pull_request:
+    branches:
+      - master
+      - releases/*
   push:
     branches:
       - master
+      - releases/*
 
 jobs:
   choco:
@@ -17,9 +22,9 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
       -
         name: Choco help
-        uses: crazy-max/ghaction-chocolatey@master
+        uses: ./
         with:
           args: -h
