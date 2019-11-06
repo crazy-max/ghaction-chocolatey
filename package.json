@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/node": "^12.12.6",
     "prettier": "^1.17.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "scripts": {
     "build": "tsc",
