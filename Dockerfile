@@ -39,13 +39,15 @@ LABEL version="$VERSION" \
 
 COPY LICENSE README.md /
 
+COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
+
 RUN apk --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add mono-dev \
   && apk --update --no-cache add -t build-dependencies ca-certificates \
   && cert-sync /etc/ssl/certs/ca-certificates.crt \
+  && ln -sf /opt /opt/chocolatey/opt \
+  && mkdir -p /opt/chocolatey/lib \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
-
-COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
 
 ADD entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]

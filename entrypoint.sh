@@ -1,5 +1,5 @@
 #!/bin/sh
 set -e
 
-ARGS=${INPUT_ARGS:-$@}
-mono /opt/chocolatey/choco.exe "$ARGS" --allow-unofficial
+ln -sf /opt opt
+mono /opt/chocolatey/choco.exe ${INPUT_ARGS:-$@} --allow-unofficial --yes
