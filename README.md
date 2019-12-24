@@ -22,7 +22,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
       -
         name: Choco help
         uses: crazy-max/ghaction-chocolatey@v1
