@@ -20,7 +20,7 @@
     "@actions/exec": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^12.12.21",
+    "@types/node": "^13.1.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   },
