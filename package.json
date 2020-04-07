@@ -25,9 +25,10 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "build-dep": "npm install -g removeNPMAbsolutePaths",
     "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "prune": "npm prune --production"
+    "prune": "npm prune --production && removeNPMAbsolutePaths \"./\" --force --fields _where _args"
   }
 }

@@ -12,7 +12,8 @@ Contributions to this project are [released](https://help.github.com/articles/gi
 5. Make your change
 6. Compile your Typescript code: `npm run build`
 7. Format your code: `npm run format`
-8. Prune dependencies: `npm prune --production`
+8. Install build dependencies: `npm run build-dep`
+8. Prune dependencies: `npm run prune`
 9. Push to your fork and [submit a pull request](https://github.com/crazy-max/ghaction-chocolatey/compare)
 10. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
