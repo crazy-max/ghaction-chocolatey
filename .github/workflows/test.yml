@@ -4,11 +4,9 @@ on:
   pull_request:
     branches:
       - master
-      - releases/*
   push:
     branches:
       - master
-      - releases/*
 
 jobs:
   choco:
@@ -23,6 +21,11 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v1
+      -
+        name: Build
+        run: |
+          npm install
+          npm run build
       -
         name: Choco help
         uses: ./
