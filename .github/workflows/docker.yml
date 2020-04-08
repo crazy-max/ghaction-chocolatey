@@ -5,7 +5,7 @@ on:
     branches: master
   push:
     branches: master
-    tags: v*
+    tags: v*.*.*
 
 jobs:
   release:
