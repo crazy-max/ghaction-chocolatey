@@ -27,7 +27,7 @@
     "@actions/exec": "^1.0.3"
   },
   "devDependencies": {
-    "@types/node": "^13.13.0",
+    "@types/node": "^13.13.1",
     "@zeit/ncc": "^0.22.1",
     "prettier": "^2.0.4",
     "typescript": "^3.8.3"
