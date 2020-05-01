@@ -1,0 +1,27 @@
+# Changelog
+
+## 1.1.0 (2020/04/09)
+
+* Use ncc and clean workflows
+* Update deps
+
+## 1.0.2 (2020/12/09)
+
+* Fix mono command (#21)
+* Update deps
+
+## 1.0.1 (2020/11/14)
+
+* Update deps
+
+## 1.0.0 (2019/10/12)
+
+* Stable release
+
+## 0.2.0 (2019/09/30)
+
+* Use native choco on Windows environment (docker limitation)
+
+## 0.1.0 (2019/09/15)
+
+* Initial version
