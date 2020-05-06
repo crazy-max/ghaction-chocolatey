@@ -2,12 +2,8 @@
   "name": "chocolatey-action",
   "description": "GitHub Action for Chocolatey, the package manager for Windows",
   "main": "lib/main.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "build": "tsc && ncc build",
-    "test": "jest",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "pre-checkin": "npm run format && npm run build"
