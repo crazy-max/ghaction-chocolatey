@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (2020/05/07)
+
+* Cleanup local paths from extra fields
+* Update deps
+
 ## 1.1.0 (2020/04/09)
 
 * Use ncc and clean workflows
