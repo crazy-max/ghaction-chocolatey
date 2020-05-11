@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 (2020/05/11)
+
+* Update README
+
 ## 1.2.1 (2020/05/11)
 
 * `args` input required
