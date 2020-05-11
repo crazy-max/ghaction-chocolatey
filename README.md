@@ -39,7 +39,7 @@ Following inputs can be used as `step.with` keys
 
 | Name            | Type    | Description                     |
 |-----------------|---------|---------------------------------|
-| `args`          | String  | Arguments to pass to Chocolatey |
+| `args`          | String  | Arguments to pass to Chocolatey (**required**) |
 
 ## Limitation
 
