@@ -12,7 +12,7 @@ async function run() {
     }
 
     const workspace = process.env['GITHUB_WORKSPACE'] || '.';
-    const args = core.getInput('args');
+    const args = core.getInput('args', {required: true});
 
     if (os.platform() == 'win32') {
       core.info('🏃 Running Choco...');

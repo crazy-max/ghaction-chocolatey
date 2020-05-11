@@ -996,7 +996,7 @@ function run() {
                 return;
             }
             const workspace = process.env['GITHUB_WORKSPACE'] || '.';
-            const args = core.getInput('args');
+            const args = core.getInput('args', { required: true });
             if (os.platform() == 'win32') {
                 core.info('🏃 Running Choco...');
                 yield exec.exec(`choco.exe ${args} --allow-unofficial`);
