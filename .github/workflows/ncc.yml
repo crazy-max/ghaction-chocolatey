@@ -1,6 +1,9 @@
 name: master
 
 on:
+  repository_dispatch:
+    types:
+      - 'ncc'
   push:
     branches:
       - 'master'
@@ -8,7 +11,7 @@ on:
       - '**.md'
 
 jobs:
-  prune:
+  run:
     runs-on: ubuntu-latest
     steps:
       -
