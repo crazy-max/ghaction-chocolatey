@@ -1,4 +1,4 @@
-name: master
+name: ncc
 
 on:
   repository_dispatch:
@@ -11,7 +11,7 @@ on:
       - '**.md'
 
 jobs:
-  run:
+  ncc:
     runs-on: ubuntu-latest
     steps:
       -
