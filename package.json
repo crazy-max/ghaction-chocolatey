@@ -28,6 +28,6 @@
     "@zeit/ncc": "^0.22.3",
     "prettier": "^2.0.5",
     "removeNPMAbsolutePaths": "^2.0.0",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }
