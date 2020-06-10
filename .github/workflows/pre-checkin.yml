@@ -23,7 +23,6 @@ jobs:
         run: yarn run pre-checkin
       -
         name: Check for uncommitted changes
-        if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
         run: |
           if [[ `git status --porcelain` ]]; then
             git status --porcelain
