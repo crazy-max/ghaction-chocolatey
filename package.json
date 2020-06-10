@@ -6,7 +6,7 @@
     "build": "tsc && ncc build",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "pre-checkin": "npm run format && npm run build"
+    "pre-checkin": "yarn run format && yarn run build"
   },
   "repository": {
     "type": "git",
