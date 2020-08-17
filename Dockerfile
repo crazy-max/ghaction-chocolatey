@@ -1,4 +1,4 @@
-FROM mono:3.12.1 as builder
+FROM mono:6.8 as builder
 
 RUN rm /etc/apt/sources.list \
   && echo "deb http://archive.debian.org/debian wheezy main non-free" >> /etc/apt/sources.list \
@@ -11,7 +11,7 @@ RUN apt-get update \
     tar \
     wget
 
-ENV CHOCOLATEY_VERSION="0.10.15" \
+ENV CHOCOLATEY_VERSION="stable" \
   ChocolateyInstall="/opt/chocolatey"
 
 WORKDIR /usr/local/src
