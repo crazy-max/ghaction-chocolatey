@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1 (2020/10/01)
+
+* Fix CVE-2020-15228
+
 ## 1.3.0 (2020/08/17)
 
 * Update Docker image using Mono 6.8 with latest Chocolatey stable
