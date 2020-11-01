@@ -24,18 +24,7 @@ RUN chmod +x build.sh zip.sh
 RUN ./build.sh
 
 FROM alpine:latest
-
-ARG VERSION
-
-# https://help.github.com/en/articles/metadata-syntax-for-github-actions#about-yaml-syntax-for-github-actions
-LABEL version="$VERSION" \
-  repository="https://github.com/crazy-max/ghaction-chocolatey" \
-  homepage="https://github.com/crazy-max/ghaction-chocolatey" \
-  maintainer="CrazyMax" \
-  "com.github.actions.name"="Chocolatey Action" \
-  "com.github.actions.description"="GitHub Action for Chocolatey, the package manager for Windows" \
-  "com.github.actions.icon"="terminal" \
-  "com.github.actions.color"="blue"
+LABEL maintainer="CrazyMax"
 
 COPY LICENSE README.md /
 

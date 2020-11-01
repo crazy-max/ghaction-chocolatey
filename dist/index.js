@@ -50,6 +50,7 @@ function run() {
             }
             const workspace = process.env['GITHUB_WORKSPACE'] || '.';
             const args = core.getInput('args', { required: true });
+            const image = core.getInput('image') || 'ghcr.io/crazy-max/ghaction-chocolatey';
             if (os.platform() == 'win32') {
                 core.info('🏃 Running Choco...');
                 yield exec.exec(`choco.exe ${args} --allow-unofficial`);
@@ -66,7 +67,7 @@ function run() {
                 '/wksp',
                 '--volume',
                 `${workspace}:/wksp`,
-                'crazymax/ghaction-chocolatey',
+                image,
                 args
             ]);
             core.info('🔨 Fixing perms...');

@@ -10,6 +10,10 @@ inputs:
   args:
     description: 'Arguments to pass to Chocolatey'
     required: true
+  image:
+    description: 'Docker image to use'
+    default: 'ghcr.io/crazy-max/ghaction-chocolatey'
+    required: false
 
 runs:
   using: 'node12'

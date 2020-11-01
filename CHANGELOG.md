@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0 (2020/11/01)
+
+* Add `image` input
+* Publish image to GHCR
+* Update deps
+
 ## 1.3.1 (2020/10/01)
 
 * Fix CVE-2020-15228
