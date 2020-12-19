@@ -1,13 +1,4 @@
-.git
-.github
-.res
-lib
-node_modules
-src
-.editorconfig
-.gitignore
-.prettierrc.json
-action.yml
-package.json
-package-lock.json
-tsconfig.json
+/.dev
+/dist
+/lib
+/node_modules
