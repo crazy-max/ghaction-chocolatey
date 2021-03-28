@@ -1,3 +1,5 @@
+ARG CHOCOLATEY_VERSION="stable"
+
 FROM mono:6.8 as builder
 
 RUN rm /etc/apt/sources.list \
@@ -11,8 +13,8 @@ RUN apt-get update \
     tar \
     wget
 
-ENV CHOCOLATEY_VERSION="stable" \
-  ChocolateyInstall="/opt/chocolatey"
+ENV ChocolateyInstall="/opt/chocolatey"
+ARG CHOCOLATEY_VERSION
 
 WORKDIR /usr/local/src
 RUN wget "https://github.com/chocolatey/choco/archive/${CHOCOLATEY_VERSION}.tar.gz" \
@@ -23,10 +25,8 @@ WORKDIR /usr/local/src/choco
 RUN chmod +x build.sh zip.sh
 RUN ./build.sh
 
-FROM alpine:latest
+FROM alpine:3.12
 LABEL maintainer="CrazyMax"
-
-COPY LICENSE README.md /
 
 COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
 
@@ -38,5 +38,5 @@ RUN apk --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/ed
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
-ADD entrypoint.sh /
+COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
