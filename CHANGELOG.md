@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1 (2021/03/28)
+
+* Enhance workflow (#104)
+* Container based developer flow (#103)
+
 ## 1.4.0 (2020/11/01)
 
 * Add `image` input
