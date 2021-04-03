@@ -30,13 +30,16 @@ jobs:
       -
         name: Docker meta
         id: meta
-        uses: crazy-max/ghaction-docker-meta@v1
+        uses: crazy-max/ghaction-docker-meta@v2
         with:
           images: |
             ${{ env.DOCKERHUB_SLUG }}
             ${{ env.GHCR_SLUG }}
-          tag-edge: true
-          label-custom: |
+          tags: |
+            type=ref,event=tag
+            type=ref,event=pr
+            type=edge
+          labels: |
             org.opencontainers.image.title=Chocolatey Action
             org.opencontainers.image.description=GitHub Action for Chocolatey, the package manager for Windows
             org.opencontainers.image.vendor=CrazyMax
