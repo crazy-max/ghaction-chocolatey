@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.2 (2021/04/16)
+
+* Bump @actions/core from 1.2.6 to 1.2.7 (#109)
+* Fix Docker image
+
 ## 1.4.1 (2021/03/28)
 
 * Enhance workflow (#104)
