@@ -67,13 +67,13 @@ variable "DEFAULT_TAG" {
   default = "ghaction-chocolatey:local"
 }
 
-// Special target: https://github.com/crazy-max/ghaction-docker-meta#bake-definition
-target "ghaction-docker-meta" {
+// Special target: https://github.com/docker/metadata-action#bake-definition
+target "docker-metadata-action" {
   tags = ["${DEFAULT_TAG}"]
 }
 
 target "image" {
-  inherits = ["ghaction-docker-meta"]
+  inherits = ["docker-metadata-action"]
   context = "./image"
 }
 
