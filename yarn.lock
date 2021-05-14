@@ -45,21 +45,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.11.2":
-  version: 14.14.45
-  resolution: "@types/node@npm:14.14.45"
-  checksum: b9ad381a8cc5273bfd75d5870f57eed2b0978a5afe9e7e0347fcdb955e9fed502277a374c2837c3e1fe6a7ade58d53a460d954dbbe50e2f18bdd7e86075ffca9
+"@types/node@npm:^15.3.0":
+  version: 15.3.0
+  resolution: "@types/node@npm:15.3.0"
+  checksum: 44039665ab71a6ec12e6637a9db4ec3123fdfaf52952ca8028a6f1b37c41c2d380e88d28a41e02693bf9d4815307e0ad938815bf8ffedc5f4d045855fa28db06
   languageName: node
   linkType: hard
 
-"@vercel/ncc@npm:^0.24.1":
-  version: 0.24.1
-  resolution: "@vercel/ncc@npm:0.24.1"
+"@vercel/ncc@npm:^0.28.5":
+  version: 0.28.5
+  resolution: "@vercel/ncc@npm:0.28.5"
   dependencies:
     node-gyp: latest
   bin:
     ncc: dist/ncc/cli.js
-  checksum: 25baa24d38035dbee374169b1cdeb183b6694692724e8437f4cdd275c8424458b70518e66e245bf2eb14f00f568ca753994e8e92da2dc91ae435afc47aa2419d
+  checksum: b9c7a08d0563764b5bf9f27eaf4275a8187d5d1082890e44590849a68e84b053fb6813bc471a671dcc9240bea652f2200bab1dcb89ddc3996705ee3c30d5d223
   languageName: node
   linkType: hard
 
@@ -179,10 +179,10 @@ __metadata:
   dependencies:
     "@actions/core": ^1.2.7
     "@actions/exec": ^1.0.4
-    "@types/node": ^14.11.2
-    "@vercel/ncc": ^0.24.1
-    prettier: ^2.1.2
-    typescript: ^4.0.3
+    "@types/node": ^15.3.0
+    "@vercel/ncc": ^0.28.5
+    prettier: ^2.3.0
+    typescript: ^4.2.4
   languageName: unknown
   linkType: soft
 
@@ -681,7 +681,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.1.2":
+"prettier@npm:^2.3.0":
   version: 2.3.0
   resolution: "prettier@npm:2.3.0"
   bin:
@@ -885,7 +885,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-typescript@^4.0.3:
+typescript@^4.2.4:
   version: 4.2.4
   resolution: "typescript@npm:4.2.4"
   bin:
@@ -895,7 +895,7 @@ typescript@^4.0.3:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.0.3#builtin<compat/typescript>":
+"typescript@patch:typescript@^4.2.4#builtin<compat/typescript>":
   version: 4.2.4
   resolution: "typescript@patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"
   bin:
