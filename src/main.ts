@@ -22,6 +22,10 @@ async function run() {
       return;
     }
 
+    core.startGroup(`Pulling chocolatey Docker image`);
+    await exec.exec('docker', ['pull', image]);
+    core.endGroup();
+
     core.startGroup('Running choco');
     fs.writeFileSync('/tmp/env.txt', child_process.execSync(`env`, {encoding: 'utf8'}).trim());
     await exec.exec('docker', [
