@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 (2021/05/14)
+
+* Update dev dependencies (#118)
+* Yarn v2 (#117)
+* Pull image first (#116)
+* Review console output (#115)
+* Move to `docker/metadata-action`
+
 ## 1.4.2 (2021/04/16)
 
 * Bump @actions/core from 1.2.6 to 1.2.7 (#109)
