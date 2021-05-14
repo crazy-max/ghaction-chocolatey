@@ -16,12 +16,13 @@ async function run() {
     const image = core.getInput('image') || 'ghcr.io/crazy-max/ghaction-chocolatey';
 
     if (os.platform() == 'win32') {
-      core.info('🏃 Running Choco...');
+      core.startGroup('Running choco');
       await exec.exec(`choco.exe ${args} --allow-unofficial`);
+      core.endGroup();
       return;
     }
 
-    core.info('🏃 Running Choco...');
+    core.startGroup('Running choco');
     fs.writeFileSync('/tmp/env.txt', child_process.execSync(`env`, {encoding: 'utf8'}).trim());
     await exec.exec('docker', [
       'run',
@@ -35,11 +36,13 @@ async function run() {
       image,
       args
     ]);
+    core.endGroup();
 
-    core.info('🔨 Fixing perms...');
+    core.startGroup('Fixing perms');
     const uid = parseInt(child_process.execSync(`id -u`, {encoding: 'utf8'}).trim());
     const gid = parseInt(child_process.execSync(`id -g`, {encoding: 'utf8'}).trim());
     await exec.exec('sudo', ['chown', '-R', `${uid}:${gid}`, workspace]);
+    core.endGroup();
   } catch (error) {
     core.setFailed(error.message);
   }
