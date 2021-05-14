@@ -3,10 +3,10 @@
   "description": "GitHub Action for Chocolatey, the package manager for Windows",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc && ncc build",
+    "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "pre-checkin": "yarn run format && yarn run build"
+    "package": "ncc build --source-map --license licenses.txt"
   },
   "repository": {
     "type": "git",
