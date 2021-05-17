@@ -2,94 +2,6 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 109:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const fs = __importStar(__nccwpck_require__(747));
-const os = __importStar(__nccwpck_require__(87));
-const child_process = __importStar(__nccwpck_require__(129));
-const core = __importStar(__nccwpck_require__(186));
-const exec = __importStar(__nccwpck_require__(514));
-function run() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            if (os.platform() == 'darwin') {
-                core.setFailed('Not supported on darwin platform');
-                return;
-            }
-            const workspace = process.env['GITHUB_WORKSPACE'] || '.';
-            const args = core.getInput('args', { required: true });
-            const image = core.getInput('image') || 'ghcr.io/crazy-max/ghaction-chocolatey';
-            if (os.platform() == 'win32') {
-                core.startGroup('Running choco');
-                yield exec.exec(`choco.exe ${args} --allow-unofficial`);
-                core.endGroup();
-                return;
-            }
-            core.startGroup(`Pulling chocolatey Docker image`);
-            yield exec.exec('docker', ['pull', image]);
-            core.endGroup();
-            core.startGroup('Running choco');
-            fs.writeFileSync('/tmp/env.txt', child_process.execSync(`env`, { encoding: 'utf8' }).trim());
-            yield exec.exec('docker', [
-                'run',
-                '--rm',
-                '--env-file',
-                '/tmp/env.txt',
-                '--workdir',
-                '/wksp',
-                '--volume',
-                `${workspace}:/wksp`,
-                image,
-                args
-            ]);
-            core.endGroup();
-            core.startGroup('Fixing perms');
-            const uid = parseInt(child_process.execSync(`id -u`, { encoding: 'utf8' }).trim());
-            const gid = parseInt(child_process.execSync(`id -g`, { encoding: 'utf8' }).trim());
-            yield exec.exec('sudo', ['chown', '-R', `${uid}:${gid}`, workspace]);
-            core.endGroup();
-        }
-        catch (error) {
-            core.setFailed(error.message);
-        }
-    });
-}
-run();
-
-
-/***/ }),
-
 /***/ 351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -1744,16 +1656,127 @@ module.exports = require("util");;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__nccwpck_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__nccwpck_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__nccwpck_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__nccwpck_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(109);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+__nccwpck_require__.r(__webpack_exports__);
+/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(747);
+/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(fs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(87);
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nccwpck_require__.n(os__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var child_process__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(129);
+/* harmony import */ var child_process__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__nccwpck_require__.n(child_process__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(186);
+/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(514);
+/* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__nccwpck_require__.n(_actions_exec__WEBPACK_IMPORTED_MODULE_4__);
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+
+
+
+function run() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            if (os__WEBPACK_IMPORTED_MODULE_1__.platform() == 'darwin') {
+                _actions_core__WEBPACK_IMPORTED_MODULE_3__.setFailed('Not supported on darwin platform');
+                return;
+            }
+            const workspace = process.env['GITHUB_WORKSPACE'] || '.';
+            const args = _actions_core__WEBPACK_IMPORTED_MODULE_3__.getInput('args', { required: true });
+            const image = _actions_core__WEBPACK_IMPORTED_MODULE_3__.getInput('image') || 'ghcr.io/crazy-max/ghaction-chocolatey';
+            if (os__WEBPACK_IMPORTED_MODULE_1__.platform() == 'win32') {
+                _actions_core__WEBPACK_IMPORTED_MODULE_3__.startGroup('Running choco');
+                yield _actions_exec__WEBPACK_IMPORTED_MODULE_4__.exec(`choco.exe ${args} --allow-unofficial`);
+                _actions_core__WEBPACK_IMPORTED_MODULE_3__.endGroup();
+                return;
+            }
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.startGroup(`Pulling chocolatey Docker image`);
+            yield _actions_exec__WEBPACK_IMPORTED_MODULE_4__.exec('docker', ['pull', image]);
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.endGroup();
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.startGroup('Running choco');
+            fs__WEBPACK_IMPORTED_MODULE_0__.writeFileSync('/tmp/env.txt', child_process__WEBPACK_IMPORTED_MODULE_2__.execSync(`env`, { encoding: 'utf8' }).trim());
+            yield _actions_exec__WEBPACK_IMPORTED_MODULE_4__.exec('docker', [
+                'run',
+                '--rm',
+                '--env-file',
+                '/tmp/env.txt',
+                '--workdir',
+                '/wksp',
+                '--volume',
+                `${workspace}:/wksp`,
+                image,
+                args
+            ]);
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.endGroup();
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.startGroup('Fixing perms');
+            const uid = parseInt(child_process__WEBPACK_IMPORTED_MODULE_2__.execSync(`id -u`, { encoding: 'utf8' }).trim());
+            const gid = parseInt(child_process__WEBPACK_IMPORTED_MODULE_2__.execSync(`id -g`, { encoding: 'utf8' }).trim());
+            yield _actions_exec__WEBPACK_IMPORTED_MODULE_4__.exec('sudo', ['chown', '-R', `${uid}:${gid}`, workspace]);
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.endGroup();
+        }
+        catch (error) {
+            _actions_core__WEBPACK_IMPORTED_MODULE_3__.setFailed(error.message);
+        }
+    });
+}
+run();
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map

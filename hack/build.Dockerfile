@@ -28,7 +28,7 @@ FROM deps AS build
 RUN --mount=type=bind,target=.,rw \
   --mount=type=cache,target=/src/.yarn/cache \
   --mount=type=cache,target=/src/node_modules \
-  yarn run build && yarn run package && mkdir /out && cp -Rf dist /out/
+  yarn run package && mkdir /out && cp -Rf dist /out/
 
 FROM scratch AS build-update
 COPY --from=build /out /
@@ -56,4 +56,4 @@ FROM deps AS format-validate
 RUN --mount=type=bind,target=.,rw \
   --mount=type=cache,target=/src/.yarn/cache \
   --mount=type=cache,target=/src/node_modules \
-  yarn run format-check \
+  yarn run format-check

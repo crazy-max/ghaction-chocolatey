@@ -1,9 +1,8 @@
 {
   "name": "chocolatey-action",
   "description": "GitHub Action for Chocolatey, the package manager for Windows",
-  "main": "lib/main.js",
+  "main": "src/main.ts",
   "scripts": {
-    "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "package": "ncc build --source-map --license licenses.txt"
