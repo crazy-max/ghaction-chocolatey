@@ -1,21 +1,15 @@
-ARG CHOCOLATEY_VERSION="stable"
+ARG CHOCOLATEY_VERSION="0.11.1"
 
-FROM mono:6.8 as builder
-
-RUN rm /etc/apt/sources.list \
-  && echo "deb http://archive.debian.org/debian wheezy main non-free" >> /etc/apt/sources.list \
-  && echo 'Acquire::Check-Valid-Until "false";' >> /etc/apt/apt.conf.d/10-no-check-valid-until \
-  && echo 'APT::Get::AllowUnauthenticated "true";' >> /etc/apt/apt.conf.d/10-allow-unauthenticated
-
+FROM mono:6.12 as builder
 RUN apt-get update \
   && apt-get install -y \
     gzip \
     tar \
-    wget
+    wget \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV ChocolateyInstall="/opt/chocolatey"
 ARG CHOCOLATEY_VERSION
-
 WORKDIR /usr/local/src
 RUN wget "https://github.com/chocolatey/choco/archive/${CHOCOLATEY_VERSION}.tar.gz" \
   && tar -xzf "${CHOCOLATEY_VERSION}.tar.gz" \
@@ -25,7 +19,7 @@ WORKDIR /usr/local/src/choco
 RUN chmod +x build.sh zip.sh
 RUN ./build.sh
 
-FROM alpine:3.12
+FROM alpine:3.14
 LABEL maintainer="CrazyMax"
 
 COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
