@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0 (2022/04/23)
+
+* Chocolatey 1.1.0 (#130)
+* Update dev dependencies and workflow (#129)
+* Bump @actions/core from 1.5.0 to 1.6.0 (#125)
+
 ## 1.6.0 (2021/09/04)
 
 * Bump @actions/exec from 1.0.4 to 1.1.0 (#122)
