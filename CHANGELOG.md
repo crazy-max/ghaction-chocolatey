@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0 (2022/04/26)
+
+* Node 16 as default runtime (#131)
+  * This requires a minimum [Actions Runner](https://github.com/actions/runner/releases/tag/v2.285.0) version of v2.285.0, which is by default available in GHES 3.4 or later.
+
 ## 1.7.0 (2022/04/23)
 
 * Chocolatey 1.1.0 (#130)
