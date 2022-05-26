@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v2
       -
         name: Choco help
-        uses: crazy-max/ghaction-chocolatey@v1
+        uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: -h
 ```
