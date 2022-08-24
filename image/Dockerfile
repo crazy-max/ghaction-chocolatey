@@ -1,6 +1,10 @@
-ARG CHOCOLATEY_VERSION="1.1.0"
+# syntax=docker/dockerfile:1
 
-FROM mono:6.12 as builder
+ARG CHOCOLATEY_VERSION="1.1.0"
+ARG MONO_VERSION="6.12"
+ARG ALPINE_VERSION="3.16"
+
+FROM mono:${MONO_VERSION} as builder
 RUN apt-get update \
   && apt-get install -y \
     gzip \
@@ -19,7 +23,7 @@ WORKDIR /usr/local/src/choco
 RUN chmod +x build.sh zip.sh
 RUN ./build.sh
 
-FROM alpine:3.15
+FROM alpine:${ALPINE_VERSION}
 LABEL maintainer="CrazyMax"
 
 COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
