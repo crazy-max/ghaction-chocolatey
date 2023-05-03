@@ -3,7 +3,7 @@ name: ci
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *' # everyday at 10am
+    - cron: '0 10 * * *'
   push:
     branches:
       - 'master'
@@ -14,14 +14,32 @@ on:
       - 'releases/v*'
 
 jobs:
-  ci:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Build image
+        uses: docker/bake-action@v3
+        with:
+          targets: image-local
+      -
+        name: Choco help
+        uses: ./
+        with:
+          args: -h
+          image: ghaction-chocolatey:local
+      -
+        name: Choco install InnoSetup
+        uses: ./
+        with:
+          args: install innosetup --no-progress
+          image: ghaction-chocolatey:local
+
+  windows:
+    runs-on: windows-latest
     steps:
       -
         name: Checkout
