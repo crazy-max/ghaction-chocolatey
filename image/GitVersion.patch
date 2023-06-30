@@ -1,0 +1,11 @@
+--- GitVersion.origin	2023-06-30 10:52:08.017731018 -0400
++++ GitVersion.yml	2023-06-30 10:49:41.978803029 -0400
+@@ -1 +1,8 @@
+ next-version: 2.0.0
++branches:
++  master:
++    regex: main
++    mode: ContinuousDeployment
++  feature: {}
++ignore:
++  sha: []
