@@ -1,14 +1,16 @@
 # syntax=docker/dockerfile:1
 
-ARG CHOCOLATEY_VERSION="1.3.1"
+ARG CHOCOLATEY_VERSION="2.1.0"
 ARG MONO_VERSION="6.12"
 ARG ALPINE_VERSION="3.17"
 
 FROM --platform=$BUILDPLATFORM alpine:${ALPINE_VERSION} as src
-RUN apk add --no-cache git
+RUN apk add --no-cache git patch
 WORKDIR /src
 ARG CHOCOLATEY_VERSION
 RUN git clone --branch ${CHOCOLATEY_VERSION} "https://github.com/chocolatey/choco.git" .
+COPY GitVersion.patch .
+RUN patch -u GitVersion.yml -i GitVersion.patch
 
 FROM mono:${MONO_VERSION} as builder
 ARG DEBIAN_FRONTEND=noninteractive
