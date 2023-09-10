@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Choco help
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: -h
 ```
@@ -44,10 +44,10 @@ jobs:
 
 Following inputs can be used as `step.with` keys
 
-| Name            | Type    | Description                     |
-|-----------------|---------|---------------------------------|
-| `args`          | String  | Arguments to pass to Chocolatey |
-| `image`         | String  | Docker image to use (default `ghcr.io/crazy-max/ghaction-chocolatey`) |
+| Name    | Type   | Description                                                           |
+|---------|--------|-----------------------------------------------------------------------|
+| `args`  | String | Arguments to pass to Chocolatey                                       |
+| `image` | String | Docker image to use (default `ghcr.io/crazy-max/ghaction-chocolatey`) |
 
 ## Limitation
 
@@ -56,11 +56,10 @@ This action is only available for Linux and Windows
 
 ## Contributing
 
-Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. If
-you want to open a pull request, please read the [contributing guidelines](.github/CONTRIBUTING.md).
-
-You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) or by
-making a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely!
+Want to contribute? Awesome! The most basic way to show your support is to star
+the project, or to raise issues. You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max)
+or by making a [PayPal donation](https://www.paypal.me/crazyws) to ensure this
+journey continues indefinitely!
 
 Thanks again for your support, it is much appreciated! :pray:
 
