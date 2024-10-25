@@ -51,7 +51,7 @@ target "vendor-validate" {
 #
 
 variable "DEFAULT_TAG" {
-  default = "ghaction-chocolatey:local"
+  default = "chocolatey:local"
 }
 
 // Special target: https://github.com/docker/metadata-action#bake-definition

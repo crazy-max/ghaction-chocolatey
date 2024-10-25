@@ -34,13 +34,13 @@ jobs:
         uses: ./
         with:
           args: -h
-          image: ghaction-chocolatey:local
+          image: chocolatey:local
       -
         name: Choco install InnoSetup
         uses: ./
         with:
           args: install innosetup --no-progress
-          image: ghaction-chocolatey:local
+          image: chocolatey:local
 
   windows:
     runs-on: windows-latest
