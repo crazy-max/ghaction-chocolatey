@@ -44,10 +44,10 @@ jobs:
 
 Following inputs can be used as `step.with` keys
 
-| Name    | Type   | Description                                                           |
-|---------|--------|-----------------------------------------------------------------------|
-| `args`  | String | Arguments to pass to Chocolatey                                       |
-| `image` | String | Docker image to use (default `ghcr.io/crazy-max/ghaction-chocolatey`) |
+| Name    | Type   | Description                                                  |
+|---------|--------|--------------------------------------------------------------|
+| `args`  | String | Arguments to pass to Chocolatey                              |
+| `image` | String | Docker image to use (default `ghcr.io/crazy-max/chocolatey`) |
 
 ## Limitation
 

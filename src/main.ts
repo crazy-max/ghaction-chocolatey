@@ -15,7 +15,7 @@ async function run() {
 
     const workspace = process.env['GITHUB_WORKSPACE'] || '.';
     const args = core.getInput('args', {required: true});
-    const image = core.getInput('image') || 'ghcr.io/crazy-max/ghaction-chocolatey';
+    const image = core.getInput('image') || 'ghcr.io/crazy-max/chocolatey';
 
     if (os.platform() == 'win32') {
       core.startGroup('Running choco');

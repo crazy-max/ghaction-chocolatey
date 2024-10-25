@@ -22,7 +22,7 @@ on:
 
 env:
   DOCKERHUB_SLUG: crazymax/ghaction-chocolatey
-  GHCR_SLUG: ghcr.io/crazy-max/ghaction-chocolatey
+  GHCR_SLUG: ghcr.io/crazy-max/chocolatey
 
 jobs:
   release:

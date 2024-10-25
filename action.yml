@@ -12,7 +12,7 @@ inputs:
     required: true
   image:
     description: 'Docker image to use'
-    default: 'ghcr.io/crazy-max/ghaction-chocolatey'
+    default: 'ghcr.io/crazy-max/chocolatey'
     required: false
 
 runs:
