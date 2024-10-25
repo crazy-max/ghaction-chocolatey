@@ -5,7 +5,7 @@ ARG ALPINE_VERSION="3.20"
 
 FROM alpine:${ALPINE_VERSION}
 WORKDIR /opt/chocolatey
-RUN apk --update --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing add mono-dev \
+RUN apk --update --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add mono-dev \
   && apk add --no-cache curl \
   && apk add -t build-dependencies ca-certificates \
   && cert-sync /etc/ssl/certs/ca-certificates.crt \
