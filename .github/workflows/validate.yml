@@ -48,3 +48,10 @@ jobs:
         uses: docker/bake-action@v6
         with:
           targets: ${{ matrix.target }}
+
+  octoguard:
+    uses: docker/octoguard/.github/workflows/octoguard.yml@main
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
