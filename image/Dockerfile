@@ -1,12 +1,11 @@
 # syntax=docker/dockerfile:1
 
-ARG CHOCOLATEY_VERSION="2.3.0"
-ARG ALPINE_VERSION="3.20"
+ARG CHOCOLATEY_VERSION="2.4.3"
+ARG ALPINE_VERSION="3.22"
 
 FROM alpine:${ALPINE_VERSION}
 WORKDIR /opt/chocolatey
-RUN apk --update --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing add mono-dev \
-  && apk add --no-cache curl \
+RUN apk add --no-cache curl mono-dev \
   && apk add -t build-dependencies ca-certificates \
   && cert-sync /etc/ssl/certs/ca-certificates.crt \
   && ln -sf /opt /opt/chocolatey/opt \
