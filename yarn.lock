@@ -22,12 +22,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/exec@npm:^1.1.0, @actions/exec@npm:^1.1.1":
+"@actions/exec@npm:^1.1.1":
   version: 1.1.1
   resolution: "@actions/exec@npm:1.1.1"
   dependencies:
     "@actions/io": ^1.0.1
   checksum: d976e66dd51ab03d76a143da8e1406daa1bcdee06046168e6e0bec681c87a12999eefaad7a81cb81f28e4190610f55a58b8458ae4b82cbaaba13200490f4e8c2
+  languageName: node
+  linkType: hard
+
+"@actions/exec@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@actions/exec@npm:2.0.0"
+  dependencies:
+    "@actions/io": ^2.0.0
+  checksum: 001e4139129fce56459c7fa3970d50e85dc9bffef5fe451312ff1277f1f18d553d221012a199d58b3a5c2198bd0c71b2060dd28e52ebfeaf5a91331347c93208
   languageName: node
   linkType: hard
 
@@ -44,6 +53,13 @@ __metadata:
   version: 1.1.2
   resolution: "@actions/io@npm:1.1.2"
   checksum: 3c6583c4557abf6c95e9cfc9b6377045e65ba2c5dd4863f4feedd6be9daf4f6b60e588ab0151d5626b5f8320a37f05b8d44ab5c329b8c19f65be31b0616e1464
+  languageName: node
+  linkType: hard
+
+"@actions/io@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@actions/io@npm:2.0.0"
+  checksum: afd29e777bedd8bb59143f12aa7c28e1112ce7aed2fed953fddc51833cbb88f0b4e379a6f3aece024c974227c01875fc0cd754a27e5953259d3a90fa3fbf0f68
   languageName: node
   linkType: hard
 
@@ -649,7 +665,7 @@ __metadata:
   resolution: "chocolatey-action@workspace:."
   dependencies:
     "@actions/core": ^1.11.1
-    "@actions/exec": ^1.1.0
+    "@actions/exec": ^2.0.0
     "@types/node": ^20.6.0
     "@typescript-eslint/eslint-plugin": ^6.6.0
     "@typescript-eslint/parser": ^6.6.0
