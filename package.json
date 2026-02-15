@@ -1,6 +1,7 @@
 {
   "name": "chocolatey-action",
   "description": "GitHub Action for Chocolatey, the package manager for Windows",
+  "type": "module",
   "main": "src/main.ts",
   "scripts": {
     "build": "ncc build src/main.ts --source-map --minify --license licenses.txt",

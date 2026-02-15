@@ -4,7 +4,7 @@ import * as child_process from 'child_process';
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
 
-import * as docker from './docker';
+import * as docker from './docker.js';
 
 async function run() {
   try {
