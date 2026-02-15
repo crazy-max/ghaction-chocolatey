@@ -6,7 +6,8 @@
 
 ## About
 
-GitHub Action for [Chocolatey](https://chocolatey.org/), the package manager for Windows.
+GitHub Action for [Chocolatey](https://chocolatey.org/), the package manager
+for Windows.
 
 ![GitHub Action for Chocolatey](.github/ghaction-chocolatey.png)
 
@@ -30,10 +31,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       -
         name: Choco help
-        uses: crazy-max/ghaction-chocolatey@v3
+        uses: crazy-max/ghaction-chocolatey@v4
         with:
           args: -h
 ```
