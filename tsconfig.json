@@ -3,17 +3,15 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "strict": true,
+    "isolatedModules": true,
     "sourceMap": true,
     "newLine": "lf",
     "outDir": "./lib",
     "rootDir": "./src",
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "useUnknownInCatchVariables": false,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src/**/*.ts"
   ]
 }
