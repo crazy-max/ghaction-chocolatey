@@ -24,10 +24,8 @@ jobs:
   labeler:
     runs-on: ubuntu-latest
     permissions:
-      # same as global permissions
-      contents: read
-      # required to update labels
-      issues: write
+      contents: read # same as global permissions
+      issues: write # required to update labels
     steps:
       -
         name: Checkout

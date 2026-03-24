@@ -32,10 +32,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      # same as global permissions
-      contents: read
-      # required to push to GHCR
-      packages: write
+      contents: read # same as global permissions
+      packages: write # required to push to GHCR
     steps:
       -
         name: Docker meta
