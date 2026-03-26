@@ -4,7 +4,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
 permissions:
   contents: read
 
@@ -18,11 +17,6 @@ on:
     paths-ignore:
       - '**.md'
   pull_request:
-    branches:
-      - 'master'
-      - 'releases/v*'
-    paths-ignore:
-      - '**.md'
 
 env:
   DOCKERHUB_SLUG: crazymax/ghaction-chocolatey
@@ -32,10 +26,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      # same as global permissions
-      contents: read
-      # required to push to GHCR
-      packages: write
+      contents: read # same as global permissions
+      packages: write # required to push to GHCR
     steps:
       -
         name: Docker meta
