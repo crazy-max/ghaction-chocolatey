@@ -19,7 +19,7 @@ on:
 
 jobs:
   linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       -
         name: Checkout
@@ -44,7 +44,7 @@ jobs:
           image: chocolatey:local
 
   windows:
-    runs-on: windows-latest
+    runs-on: windows-2025
     steps:
       -
         name: Checkout
