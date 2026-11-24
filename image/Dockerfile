@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
 
+# renovate: datasource=github-releases depName=chocolatey/choco
 ARG CHOCOLATEY_VERSION="2.4.3"
+# renovate: datasource=docker depName=alpine versioning=docker
 ARG ALPINE_VERSION="3.22"
 
 FROM alpine:${ALPINE_VERSION}
