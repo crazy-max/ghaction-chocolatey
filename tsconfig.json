@@ -2,6 +2,8 @@
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "types": ["node"],
+    "strict": false,
     "esModuleInterop": true,
     "isolatedModules": true,
     "sourceMap": true,
