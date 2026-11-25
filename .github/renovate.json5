@@ -14,7 +14,8 @@
   "minimumReleaseAge": "2 days",
   "internalChecksFilter": "strict",
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true,
+    "commitMessageSuffix": ""
   },
   // Refresh transitive dependencies whenever Renovate runs.
   // This can pick up security fixes within the allowed dependency ranges.
@@ -24,7 +25,7 @@
   },
   "labels": ["kind/dependencies", "bot"],
   "semanticCommits": "disabled",
-  "commitMessagePrefix": "deps:",
+  "commitMessagePrefix": "deps{{#if isVulnerabilityAlert}}(security){{/if}}:",
   // Allow Renovate to replace dist commits created by update-dist on rebase.
   "gitIgnoredAuthors": ["41898282+github-actions[bot]@users.noreply.github.com"],
   "customManagers": [
@@ -39,15 +40,15 @@
   "packageRules": [
     {
       "matchFileNames": ["**/*Dockerfile*"],
-      "commitMessagePrefix": "deps(dockerfile):"
+      "commitMessagePrefix": "deps(dockerfile{{#if isVulnerabilityAlert}},security{{/if}}):"
     },
     {
       "matchFileNames": [".github/workflows/**"],
-      "commitMessagePrefix": "deps(ci):"
+      "commitMessagePrefix": "deps(ci{{#if isVulnerabilityAlert}},security{{/if}}):"
     },
     {
       "matchManagers": ["npm"],
-      "commitMessagePrefix": "deps(npm):",
+      "commitMessagePrefix": "deps(npm{{#if isVulnerabilityAlert}},security{{/if}}):",
       "rangeStrategy": "bump"
     },
     {
