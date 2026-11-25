@@ -3,7 +3,7 @@
 # renovate: datasource=github-releases depName=chocolatey/choco
 ARG CHOCOLATEY_VERSION="2.4.3"
 # renovate: datasource=docker depName=alpine versioning=docker
-ARG ALPINE_VERSION="3.22"
+ARG ALPINE_VERSION="3.24"
 
 FROM alpine:${ALPINE_VERSION}
 WORKDIR /opt/chocolatey
