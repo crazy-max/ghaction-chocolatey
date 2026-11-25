@@ -13,6 +13,15 @@
   "prHourlyLimit": 0,
   "minimumReleaseAge": "2 days",
   "internalChecksFilter": "strict",
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  // Refresh transitive dependencies whenever Renovate runs.
+  // This can pick up security fixes within the allowed dependency ranges.
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
   "labels": ["kind/dependencies", "bot"],
   "semanticCommits": "disabled",
   "commitMessagePrefix": "deps:",
